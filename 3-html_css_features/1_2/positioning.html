@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Positioning</title>
+	<style type="text/css">
+		body {
+			height: 10000px;
+		}
+		input[type=button] {
+			background-color: green;
+			color: white;
+			border: none;
+
+			position: absolute;
+			right: -5px;
+			bottom: -5px;		
+		}
+		.text {
+			margin: 0;
+			padding: 0;
+		}
+		aside {
+			border: 1px solid green;
+			width: 150px;
+			position: relative;
+			padding: 10px 10px 20px 10px;
+						
+			position: fixed;
+			right: 25px;
+			top: 25px;
+		}
+	</style>
+</head>
+<body>
+	<aside>
+		<div class="text">Для того, чтобы пользоваться сайтом, Вам нужно разрешить использование cookies.</div>
+		<input type="button" value="Разрешаю">
+	</aside>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+* {
+    box-sizing: border-box;
+}
+
+aside, body, section, nav, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+    width: 100%;
+    height: 100%;	
+}
+
+header {
+	text-align: center;
+}
+
+.logo:first-letter {
+	color: red;
+}
+
+.switcher {
+    vertical-align: center;
+    height: 100%;
+}
+
+button {
+	background-color: white;
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	width: 150px;
+	height: 50px;
+	margin: 15px;
+	border-radius: 10px;
+}
+
+/*---------------------------*/
+
+.container {
+	overflow: hidden;
+	margin: 0 auto;
+	width: 90%;
+}
+
+.card {
+	vertical-align: top;
+	display: inline-block;
+	padding: 5%;
+	min-width: 200px;
+	width: calc(25% - 2rem);
+    cursor: default;	
+}
+
+.card-data__name {
+	font-size: 1.5em;
+	margin: 5px 2px;
+	color: blue;
+	text-decoration: underline;
+}
+
+.card:hover .card-img img {
+	opacity: 0.5;
+}
+
+.card-data__name:hover a {
+	color: rgb(151, 22, 22);
+}
+
+.card-data__category {
+	color: gray;
+	font-size: 0.8em;
+	margin: 2px;
+}
+
+.card-data__category a:hover {
+	color: rgb(151, 22, 22);
+}
+
+.card-data__category-name {
+	text-decoration: underline;
+}
+
+.cat-price {
+	margin: 20px 0 10px 0;
+	font-weight: bold;
+	color: #96070A;
+	font-size: 1.2em;
+}
+
+.cat-price-old {
+	color: #69696B;
+	font-size: 0.7em;
+	text-decoration: line-through;
+	margin-left: 10px;
+}
+
+.cat-descr {
+	font-size: 0.8em;
+}
+
+/***** Rating Stars *****/
+
+fieldset, label { 
+	margin: 0; 
+	padding: 0; 
+}
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 1px;
+  /*font-size: 1.25em;*/
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+  float: right; 
+}
+
+.rating > label.selected { 
+  color: #FFD700; 
+}
+
+.rating > input:checked ~ label, 
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } 
+
+.rating > input:checked + label:hover, 
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, 
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+/***** Cat images *****/
+
+.card-img {
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.card-img img {
+    position: absolute;
+    margin: auto 0;
+    width: 100%;
+    max-height: 100%;
+    bottom: 0;
+}
