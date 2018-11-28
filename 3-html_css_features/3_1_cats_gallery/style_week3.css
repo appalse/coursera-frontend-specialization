@@ -12,41 +12,18 @@ body {
 	font-family: Times New Roman, serif, sans-serif;
 	box-sizing: border-box;
 	background-color: #ececec;
-	flex-direction: column;
-
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 /* --- Шапка --- */
 header {
-	border-bottom: 1px solid black;
 	padding: 20px;
 }
 
-h1 {
-	text-align: center;
-}
-
-/* --- Основной блок --- */
-aside {
-	background-color: #ddd;
-	position: absolute;
-	right: 0;
-	width: 200px;
-	height: 400px;
-	margin: 10px;
-}
-
-.rating {
-	color: #f00;
-	text-align: center;
-}
-
-.descending-checkbox {
-	position: absolute;
-	right: 0;
-	padding: 0 10px;
-}
+h1 { text-align: center; }
 
 /* --- Подвал --- */
 footer {
@@ -54,11 +31,67 @@ footer {
 	justify-content: space-between;
 	align-items: center;
 
-	position: absolute; /* fix footer in the bottom of page */
-	bottom: 0;
-
 	box-sizing: border-box;
 	width: 100%;
 	padding: 10px;
 	border-top: 1px solid black;
+}
+
+.address { color: #00f; }
+
+/* --- Основной блок --- */
+main {
+	max-width: 1200px;
+	flex: 1;
+
+	display: grid;
+	grid-template-areas: "menu cat1 cat2 cat2 aside"
+						 ".    cat3 cat4 cat5 aside"
+						 ".    cat6 cat6 cat7 aside"
+						 ".    cat8 cat8 cat8 aside";
+
+}
+
+/* --- Карточки кошек --- */
+.menu-cats {
+	grid-area: menu;
+	width: 200px;
+	background-color: #ddd;
+}
+
+.cat-1 { grid-area: cat1; }
+.cat-2 { grid-area: cat2; }
+.cat-3 { grid-area: cat3; }
+.cat-4 { grid-area: cat4; }
+.cat-5 { grid-area: cat5; }
+.cat-6 { grid-area: cat6; }
+.cat-7 { grid-area: cat7; }
+.cat-8 { grid-area: cat8; }
+
+.cat {
+	display: flex;
+	justify-content: center;	
+}
+
+.cat img {
+	max-height: 200px;
+	padding: 2px
+}
+
+/* --- Блок рейтинга --- */
+aside {
+	grid-area: aside;
+	background-color: #ddd;
+	align-self: flex-start;
+	width: 200px;
+}
+
+.rating {
+	color: #f00;
+	text-align: center;
+	padding: 10px;
+}
+
+.descending-checkbox {
+	padding: 0 10px 10px 60px;
 }
