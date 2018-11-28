@@ -1,25 +1,33 @@
-html, body {
-	margin: 0;
+* {
+	margin: 0; /* to avoid vertical scroll */
 	padding: 0;
+}
+
+html {
 	height: 100%;
-	width: 100%;
 }
 
 body {
-	height: inherit;
-	width: inherit;
+	min-height: 100%;
 	font-family: Times New Roman, serif, sans-serif;
 	box-sizing: border-box;
 	background-color: #ececec;
-	display: flex;
 	flex-direction: column;
+
 	position: relative;
+}
+
+/* --- Шапка --- */
+header {
+	border-bottom: 1px solid black;
+	padding: 20px;
 }
 
 h1 {
 	text-align: center;
 }
 
+/* --- Основной блок --- */
 aside {
 	background-color: #ddd;
 	position: absolute;
@@ -27,7 +35,6 @@ aside {
 	width: 200px;
 	height: 400px;
 	margin: 10px;
-
 }
 
 .rating {
@@ -41,22 +48,17 @@ aside {
 	padding: 0 10px;
 }
 
+/* --- Подвал --- */
 footer {
-	position: absolute;
-	display: block;
-	box-shadow: 0 0 1px 0 #000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	position: absolute; /* fix footer in the bottom of page */
 	bottom: 0;
-	height: 30px;
-	width: 95%;
-	margin: 0 auto;
-}
 
-.company-name {
-	position: absolute;
-	left: 0;
-}
-
-.address {
-	position: absolute;
-	right: 0;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	border-top: 1px solid black;
 }
