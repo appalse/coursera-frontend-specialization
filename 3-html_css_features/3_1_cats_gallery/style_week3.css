@@ -67,12 +67,20 @@ main {
 
 .cat {
 	display: flex;
-	justify-content: center;	
+	justify-content: center;
+	opacity: 1;
+	position: relative;
+	width: 100%;
+	height: 100%;
 }
 
 .cat img {
 	max-height: 200px;
-	padding: 2px
+	padding: 2px;
+	position: relative;
+	background-size: 100%;
+	width: 100%;
+	height: 100%;	
 }
 
 /* --- Меню кнопок --- */
@@ -85,23 +93,75 @@ main > input {
 
 .menu-cats label {
 	cursor: pointer;
-	display: block;
 	height: 25%;
 	width: 100%;
 	box-sizing: border-box;
 	border: 1px solid gray;
-	padding: 10px;
+	padding: 0 10px;
 	background-color: #ddd;
 	color: #000;
+	display:flex;
+    align-items: center;
 }
 
-.menu-cats label:active,
-#button1:active ~ .menu-cats label:nth-of-type(1),
-#button2:active ~ .menu-cats label:nth-of-type(2),
-#button3:active ~ .menu-cats label:nth-of-type(3),
-#button4:active ~ .menu-cats label:nth-of-type(4) {
+#button1:checked ~ .menu-cats label:nth-of-type(1),
+#button2:checked ~ .menu-cats label:nth-of-type(2),
+#button3:checked ~ .menu-cats label:nth-of-type(3),
+#button4:checked ~ .menu-cats label:nth-of-type(4) {
 	background-color: gray;
 	color: #fff;
+}
+
+#button1:checked ~ .cat-1,
+#button1:checked ~ .cat-2,
+#button1:checked ~ .cat-3,
+#button1:checked ~ .cat-4,
+#button1:checked ~ .cat-5,
+#button1:checked ~ .cat-6,
+#button1:checked ~ .cat-7 {
+	opacity: 0.5;
+}
+
+#button2:checked ~ .cat-1,
+#button2:checked ~ .cat-5,
+#button2:checked ~ .cat-6,
+#button2:checked ~ .cat-7,
+#button2:checked ~ .cat-8 {
+	opacity: 0.5;
+}
+
+#button3:checked ~ .cat-1,
+#button3:checked ~ .cat-2,
+#button3:checked ~ .cat-3,
+#button3:checked ~ .cat-4,
+#button3:checked ~ .cat-6,
+#button3:checked ~ .cat-8 {
+	opacity: 0.5;
+}
+
+#button4:checked ~ .cat-2,
+#button4:checked ~ .cat-3,
+#button4:checked ~ .cat-4,
+#button4:checked ~ .cat-5,
+#button4:checked ~ .cat-7,
+#button4:checked ~ .cat-8 {
+	opacity: 0.5;
+}
+
+/* --- Плашка с именем кота  --- */
+.cat-name {
+	display: none;
+}
+
+.cat:hover > .cat-name  {
+	display: block;
+	position: absolute;
+	left: 0; bottom: 20px;
+	opacity: 0.6;
+	background-color: #000;
+	color: #fff;
+	line-height: 50px;
+	padding: 10px 20px;	
 }
 
 /* --- Блок рейтинга --- */
@@ -112,12 +172,64 @@ aside {
 	width: 200px;
 }
 
-.rating {
+.rating-header {
 	color: #f00;
 	text-align: center;
 	padding: 10px;
 }
 
-.descending-checkbox {
-	padding: 0 10px 10px 60px;
+
+.descending-checkbox > input { margin: 10px; }
+
+.raiting-value {
+	display: grid;
+	grid-template-areas: "a a a a a a a a a"
+						 "b b b b b b b b c";
+	padding: 10px 10px 15px 10px;
+}
+
+.raiting-value > .raiting-name {
+	grid-area: a;
+	padding-bottom: 10px;
+	line-height: 15px;
+}
+
+.raiting-value > .raiting-box {
+	grid-area: b;
+	box-sizing: border-box;
+	height: 20px;
+	width: 90%;
+	border: 1px solid #ccc;	
+}
+
+.raiting-value > .raiting-score {
+	grid-area: c;
+}
+
+.abessin-cat,
+.britain-cat,
+.rus-blue-cat,
+.siam-cat {
+	height: 100%;
+	/*align-self: flex-start;*/
+}
+
+.abessin-cat {
+	width: 90%;
+	background: linear-gradient(90deg, #0f0, #fff);
+}
+
+.britain-cat {
+	width: 80%;
+	background: linear-gradient(90deg, yellow, #fff);
+}
+
+.rus-blue-cat {
+	width: 100%;
+	background: linear-gradient(90deg, #0f0, #fff);
+}
+
+.siam-cat {
+	width: 40%;
+	background: linear-gradient(90deg, red, #fff);
 }
