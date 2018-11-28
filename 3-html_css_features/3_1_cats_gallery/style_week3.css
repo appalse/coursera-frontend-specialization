@@ -1,0 +1,62 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	height: inherit;
+	width: inherit;
+	font-family: Times New Roman, serif, sans-serif;
+	box-sizing: border-box;
+	background-color: #ececec;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+h1 {
+	text-align: center;
+}
+
+aside {
+	background-color: #ddd;
+	position: absolute;
+	right: 0;
+	width: 200px;
+	height: 400px;
+	margin: 10px;
+
+}
+
+.rating {
+	color: #f00;
+	text-align: center;
+}
+
+.descending-checkbox {
+	position: absolute;
+	right: 0;
+	padding: 0 10px;
+}
+
+footer {
+	position: absolute;
+	display: block;
+	box-shadow: 0 0 1px 0 #000;
+	bottom: 0;
+	height: 30px;
+	width: 95%;
+	margin: 0 auto;
+}
+
+.company-name {
+	position: absolute;
+	left: 0;
+}
+
+.address {
+	position: absolute;
+	right: 0;
+}
