@@ -223,21 +223,19 @@ aside > input:checked ~ .raiting-values > .raiting-value { order: var(--data-rai
 	display: grid;
 	grid-template-areas: "a a a a a a a a a"
 						 "b b b b b b b b c";
-	padding: 10px 10px 15px 10px;
+	padding: 5px 10px 5px 10px;
 }
 
 .raiting-value > .raiting-name {
 	grid-area: a;
-	padding-bottom: 10px;
-	line-height: 15px;
+	padding-bottom: 2%;
 }
 
 .raiting-value > .raiting-box {
 	grid-area: b;
 	box-sizing: border-box;
-	height: 20px;
+	height: 80%;
 	width: 90%;
-	border: 1px solid #ccc;	
 }
 
 .raiting-value > .raiting-score {
@@ -249,24 +247,21 @@ aside > input:checked ~ .raiting-values > .raiting-value { order: var(--data-rai
 .rus-blue-cat,
 .siam-cat {
 	height: 100%;
+	width: var(--data-raiting-width);
 }
 
 .abessin-cat {
-	width: 90%;
 	background: linear-gradient(90deg, #0f0, #fff);
 }
 
 .britain-cat {
-	width: 80%;
 	background: linear-gradient(90deg, yellow, #fff);
 }
 
 .rus-blue-cat {
-	width: 100%;
 	background: linear-gradient(90deg, #0f0, #fff);
 }
 
 .siam-cat {
-	width: 40%;
 	background: linear-gradient(90deg, red, #fff);
 }
