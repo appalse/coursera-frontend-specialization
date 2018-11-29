@@ -217,10 +217,7 @@ aside > input:checked ~ .checkbox-label label:after {
 	flex-direction: column;
 }
 
-aside > input:checked ~ .raiting-values > .score-10 { order: 1; }
-aside > input:checked ~ .raiting-values > .score-9  { order: 2; }
-aside > input:checked ~ .raiting-values > .score-8  { order: 3; }
-aside > input:checked ~ .raiting-values > .score-4  { order: 4; }
+aside > input:checked ~ .raiting-values > .raiting-value { order: var(--data-raiting-order); }
 
 .raiting-value {
 	display: grid;
