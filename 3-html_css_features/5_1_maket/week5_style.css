@@ -1,0 +1,282 @@
+:root {
+	--main-bg-color: #f6f5f3;
+	--logo-bg-color: #fff;
+	--round-button-bg-color: #ffdb4a; /* TODO RENAME*/
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100vh;
+}
+
+body {
+	min-height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main-section {
+	background-color: var(--main-bg-color);
+	background-clip: content-box;
+	box-sizing: border-box;
+	min-height: 100%;
+	width: 1020px;
+	padding: 18px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+/* --- LOGO --- */
+.logo {
+	height: 130px;
+	width: 100%;
+	position: relative;
+}
+
+.logo__block {
+	width: 166px;
+	height: 82px;
+	top: 0;
+	right: 74px;
+	background-color: var(--logo-bg-color);
+	position: absolute;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.logo__block:after {
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	top: 82px;
+	right: 0;
+	border-left: 83px solid transparent;
+	border-right: 83px solid transparent;
+	border-top: 48px solid var(--logo-bg-color);
+}
+
+.logo__company-name:first-letter {
+	color: red;
+}
+
+.logo__text {
+	font-family: "Yanone Kaffeesatz",sans-serif;
+}
+
+.logo__company-name {
+	font-size: 2.5em;
+}
+
+.logo__service-name {
+	font-size: 0.8em;
+}
+
+
+/* --- PROMO --- */
+.promo {
+	margin-top: 50px;
+	height: 350px;
+	width: inherit;
+	box-sizing: border-box;
+	padding-left: 60px;
+	padding-right: 60px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.promo__round-button {
+	height: 62px;
+	width: 62px;
+	background-color: var(--round-button-bg-color);
+	border-radius: 50%;
+	position: relative;
+	box-shadow: 1px 1px 1px red;
+}
+
+.promo__round-button:hover {
+	cursor: pointer;
+}
+
+.promo__button-left {
+	order: 1;
+}
+
+.promo__button-right {
+	order: 3;
+}
+
+.promo__block {
+	order: 2;
+	height: 100%;
+	max-width: 660px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.promo__text {
+	font-size: 2.2em;
+	position: relative;
+}
+
+.promo__text:before {
+	content: "«";
+	position: absolute;
+	left: -23px;
+}
+
+.promo__text:after {
+	content: "»";
+}
+
+.promo__control-img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.control_hovered:hover {
+	opacity: 0.8;
+}
+
+/* --- VIDEO --- */
+.video {
+	width: 641px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	position: relative;
+}
+
+.video__name {
+	position: absolute;
+	top: 0;
+	width: inherit;
+	line-height: 52px;
+	font-size: 27px;
+	background-color: black;
+	color: white;
+	opacity: 0.7;
+	text-align: center;
+}
+
+.video__button-play {
+	height: 130px;
+	width: 130px;
+	border-radius: 50%;
+	background-color: var(--round-button-bg-color);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.video__control-img {
+	padding-left: 10px;
+}
+
+
+/* --- INFO --- */
+.info {
+	height: 319px;
+	padding: 0 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.info__block {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+.info__item {
+	width: calc(25% - 2em);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding: 0 5px;
+}
+
+.info__header {
+	font-size: 45px;
+}
+
+.info__item-header {
+	font-size: 27px;
+	margin: 5px 0 10px 0;
+	max-width: 200px;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.info__icon {
+	height: 84px;
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.info__text {
+	font-size: 0.9em;
+}
+
+/* --- CONTROLS --- */
+.controls {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.controls__header {
+	font-size: 40px;
+	text-align: center;
+	margin: 60px 0;
+}
+
+.controls__btn {
+	width: 320px;
+	height: 73px;
+	line-height: 70px;
+	text-align: center;
+	font-size: 35px;
+	background: linear-gradient(#ffe34a, #ffdb01);
+	color: #473f0f;
+	border-radius: 15px;
+}
+
+.controls__btn:hover {
+	background: linear-gradient(#ffe86b, #ffe12f);
+	color: #474017;
+
+

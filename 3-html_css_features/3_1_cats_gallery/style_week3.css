@@ -8,8 +8,10 @@ html {
 }
 
 body {
-	min-height: 100%;
-	font-family: Times New Roman, serif, sans-serif;
+	min-width: 640px;
+	max-width: 1920px;
+	min-height: 100vh;
+	font-family: Arial, sans-serif;
 	box-sizing: border-box;
 	background-color: #ececec;
 	display: flex;
