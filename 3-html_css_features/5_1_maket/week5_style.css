@@ -120,7 +120,7 @@ body {
 	background-color: var(--round-button-bg-color);
 	border-radius: 50%;
 	position: relative;
-	box-shadow: 1px 1px 1px red;
+	box-shadow: 0.5px 0.5px 1px red;
 }
 
 .promo__round-button:hover { cursor: pointer; }
@@ -188,6 +188,7 @@ body {
 	width: 130px;
 	border-radius: 50%;
 	background-color: var(--round-button-bg-color);
+	box-shadow: 0.5px 0.5px 1px red;
 	position: absolute;
 	left: 50%;
 	top: 50%;
