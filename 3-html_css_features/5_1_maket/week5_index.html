@@ -7,57 +7,62 @@
 	<link href="https://fonts.googleapis.com/css?family=News+Cycle|Yanone+Kaffeesatz:300,400" rel="stylesheet">
 </head>
 <body>
-	<header class="header"></header>
-	<footer class="footer"></footer>
-	<main class="main-section">
-		<div class="logo">
+	<div class="global-background">
+		<!-- --- Для верстки логотипа картинкой --- -->
+		<!--<header class="header">
+			<img class="header__logo-img" src="img/logo.png" alt="logo image">
+		</header>-->
+		<header class="header logo">
 			<div class="logo__block">
 				<div class="logo__text logo__company-name">Яндекс</div>
 				<div class="logo__text logo__service-name">авто</div>
 			</div>
-		</div>
-		<div class="promo">
-			<div class="promo__block">
-				<div class="promo__text">Хозяйственный мужчина ищет надежную красавицу для прогулок по бездорожью. Полный привод обязателен</div>
-				<div class="promo__image"><img src="img/offroad_cars.png"></div>
+		</header>
+		<footer class="footer"></footer>
+		<main class="main-section">
+			<div class="promo">
+				<div class="promo__block">
+					<div class="promo__text">Хозяйственный мужчина ищет надежную красавицу для прогулок по бездорожью. Полный привод обязателен</div>
+					<div class="promo__image"><img src="img/offroad_cars.png"></div>
+				</div>
+				<div class="promo__round-button promo__button-left  control_hovered"><img class="promo__control-img" src="img/btn_left.png" alt="arrow left"></div>
+				<div class="promo__round-button promo__button-right control_hovered"><img class="promo__control-img" src="img/btn_right.png" alt="arrow right"></div>
 			</div>
-			<div class="promo__round-button promo__button-left  control_hovered"><img class="promo__control-img" src="img/btn_left.png" alt="arrow left"></div>
-			<div class="promo__round-button promo__button-right control_hovered"><img class="promo__control-img" src="img/btn_right.png" alt="arrow right"></div>
-		</div>
-		<div class="video">
-			<img src="img/video_background.png" alt="video background">
-			<div class="video__name">Яндекс.Авто за минуту</div>
-			<div class="video__button-play control_hovered"><img class="video__control-img" src="img/btn_play.png" alt="play button"></div>
-		</div>
-		<div class="info">
-			<div class="info__header">Простой способ выбрать автомобиль</div>
-			<div class="info__block">
-				<div class="info__catalogue info__item">
-					<div class="info__catalogue-icon   info__icon"><img src="img/icon_catalogue.png" alt="catalogue icon"></div>
-					<div class="info__catalogue-header info__item-header">Каталог</div>
-					<div class="info__catalogue-text   info__text">Самый большой каталог с описанием автомобилей от современных - до 20 лет назад</div>
-				</div>
-				<div class="info__magnifying-glass info__item">
-					<div class="info__magnifying-glass-icon   info__icon"><img src="img/icon_magnifying_glass.png" alt="magnifying-glass icon"></div>
-					<div class="info__magnifying-glass-header info__item-header">Поиск</div>
-					<div class="info__magnifying-glass-text   info__text">Возможность искать по большому числу параметров, чем где бы то ни было</div>
-				</div>
-				<div class="info__intersections info__item">
-					<div class="info__intersections-icon   info__icon"><img src="img/icon_intersections.png" alt="intersections icon"></div>
-					<div class="info__intersections-header info__item-header">Выборки автомобилей</div>
-					<div class="info__intersections-text   info__text">Выборки автомобилей в зависимости от ваших потребностей: <q>семейный</q>, <q>для города</q>, <q>для путешествий</q></div>
-				</div>
-				<div class="info__search-field info__item">
-					<div class="info__search-field-icon   info__icon"><img src="img/icon_search_field.png" alt="search-field icon"></div>
-					<div class="info__search-field-header info__item-header">Простой язык</div>
-					<div class="info__search-field-text   info__text">Возможность описания характеристик простым языком, понятным неискушенному пользователю</div>
+			<div class="video">
+				<img src="img/video_background.png" alt="video background">
+				<div class="video__name">Яндекс.Авто за минуту</div>
+				<div class="video__button-play control_hovered"><img class="video__control-img" src="img/btn_play.png" alt="play button"></div>
+			</div>
+			<div class="info">
+				<div class="info__header">Простой способ выбрать автомобиль</div>
+				<div class="info__block">
+					<div class="info__catalogue info__item">
+						<div class="info__catalogue-icon   info__icon"><img src="img/icon_catalogue.png" alt="catalogue icon"></div>
+						<div class="info__catalogue-header info__item-header">Каталог</div>
+						<div class="info__catalogue-text   info__text">Самый большой каталог с описанием автомобилей от современных - до 20 лет назад</div>
+					</div>
+					<div class="info__magnifying-glass info__item">
+						<div class="info__magnifying-glass-icon   info__icon"><img src="img/icon_magnifying_glass.png" alt="magnifying-glass icon"></div>
+						<div class="info__magnifying-glass-header info__item-header">Поиск</div>
+						<div class="info__magnifying-glass-text   info__text">Возможность искать по большому числу параметров, чем где бы то ни было</div>
+					</div>
+					<div class="info__intersections info__item">
+						<div class="info__intersections-icon   info__icon"><img src="img/icon_intersections.png" alt="intersections icon"></div>
+						<div class="info__intersections-header info__item-header">Выборки автомобилей</div>
+						<div class="info__intersections-text   info__text">Выборки автомобилей в зависимости от ваших потребностей: <q>семейный</q>, <q>для города</q>, <q>для путешествий</q></div>
+					</div>
+					<div class="info__search-field info__item">
+						<div class="info__search-field-icon   info__icon"><img src="img/icon_search_field.png" alt="search-field icon"></div>
+						<div class="info__search-field-header info__item-header">Простой язык</div>
+						<div class="info__search-field-text   info__text">Возможность описания характеристик простым языком, понятным неискушенному пользователю</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="controls">
-			<div class="controls__header">Выбирайте. Находите. Заводите!</div>
-			<div class="controls__btn">Попробовать!</div>
-		</div>
-	</main>	
+			<div class="controls">
+				<div class="controls__header">Выбирайте. Находите. Заводите!</div>
+				<div class="controls__btn">Попробовать!</div>
+			</div>
+		</main>	
+	</div>
 </body>
 </html>

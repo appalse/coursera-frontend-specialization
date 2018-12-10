@@ -1,7 +1,7 @@
 :root {
 	--main-bg-color: #f6f5f3;
 	--logo-bg-color: #fff;
-	--round-button-bg-color: #ffdb4a; /* TODO RENAME*/
+	--round-button-bg-color: #ffdb4a;
 }
 
 * {
@@ -10,46 +10,68 @@
 }
 
 html {
-	height: 100vh;
+	height: 100%;
+	width: 100%;
 }
 
 body {
-	min-height: 100%;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family:"Lucida Sans Unicode", "Arial", "Helvetica", sans-serif;
+	height: inherit;
+	width: inherit;
+}
+
+.global-background {
+	background-color: var(--main-bg-color);
+	background-clip: content-box;	
+
+	position: relative;
+	width: 1020px;	
+	padding: 18px;
+	margin: 0 auto;
+	box-sizing: border-box;	
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.header {
+	box-sizing: border-box;	
+	width: 100%;
+}
+/* --- Для верстки логотипа картинкой --- */
+/*
+.header__logo-img {
+	position: relative;
+	left: 740px;
+}*/
+
+.footer {
+	height: 0;
+	width: 0;
 }
 
 .main-section {
-	background-color: var(--main-bg-color);
-	background-clip: content-box;
-	box-sizing: border-box;
-	min-height: 100%;
-	width: 1020px;
-	padding: 18px;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 }
 
 /* --- LOGO --- */
+
 .logo {
-	height: 130px;
-	width: 100%;
 	position: relative;
+	height: 133px;
 }
 
 .logo__block {
-	width: 166px;
-	height: 82px;
+	position: absolute;
+	width: 170px;
+	height: 83px;
 	top: 0;
 	right: 74px;
 	background-color: var(--logo-bg-color);
-	position: absolute;
+	
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -61,35 +83,27 @@ body {
 	height: 0;
 	width: 0;
 	position: absolute;
-	top: 82px;
+	top: 83px;
 	right: 0;
-	border-left: 83px solid transparent;
-	border-right: 83px solid transparent;
-	border-top: 48px solid var(--logo-bg-color);
+	border-left: 85px solid transparent;
+	border-right: 85px solid transparent;
+	border-top: 50px solid var(--logo-bg-color);
 }
 
-.logo__company-name:first-letter {
-	color: red;
-}
+.logo__company-name:first-letter { color: red; }
 
-.logo__text {
-	font-family: "Yanone Kaffeesatz",sans-serif;
-}
+.logo__text { font-family: "Yanone Kaffeesatz",sans-serif; }
 
-.logo__company-name {
-	font-size: 2.5em;
-}
+.logo__company-name { font-size: 2.5em; }
 
-.logo__service-name {
-	font-size: 0.8em;
-}
+.logo__service-name { font-size: 0.8em; }
 
 
 /* --- PROMO --- */
 .promo {
 	margin-top: 50px;
 	height: 350px;
-	width: inherit;
+	width: 100%;
 	box-sizing: border-box;
 	padding-left: 60px;
 	padding-right: 60px;
@@ -109,17 +123,11 @@ body {
 	box-shadow: 1px 1px 1px red;
 }
 
-.promo__round-button:hover {
-	cursor: pointer;
-}
+.promo__round-button:hover { cursor: pointer; }
 
-.promo__button-left {
-	order: 1;
-}
+.promo__button-left  { order: 1; }
 
-.promo__button-right {
-	order: 3;
-}
+.promo__button-right { order: 3; }
 
 .promo__block {
 	order: 2;
@@ -153,9 +161,7 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-.control_hovered:hover {
-	opacity: 0.8;
-}
+.control_hovered:hover { opacity: 0.8; }
 
 /* --- VIDEO --- */
 .video {
@@ -192,9 +198,7 @@ body {
 
 }
 
-.video__control-img {
-	padding-left: 10px;
-}
+.video__control-img { padding-left: 10px; }
 
 
 /* --- INFO --- */
@@ -221,14 +225,15 @@ body {
 	justify-content: space-between;
 	align-items: flex-start;
 	padding: 0 5px;
+	box-sizing: border-box;
 }
 
 .info__header {
-	font-size: 45px;
+	font-size: 40px;
 }
 
 .info__item-header {
-	font-size: 27px;
+	font-size: 25px;
 	margin: 5px 0 10px 0;
 	max-width: 200px;
 
@@ -246,9 +251,7 @@ body {
 	align-items: center;
 }
 
-.info__text {
-	font-size: 0.9em;
-}
+.info__text { font-size: 0.9em; }
 
 /* --- CONTROLS --- */
 .controls {
@@ -278,5 +281,4 @@ body {
 .controls__btn:hover {
 	background: linear-gradient(#ffe86b, #ffe12f);
 	color: #474017;
-
-
+}
