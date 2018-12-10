@@ -102,7 +102,7 @@ body {
 /* --- PROMO --- */
 .promo {
 	margin-top: 50px;
-	height: 350px;
+	height: auto;
 	width: 100%;
 	box-sizing: border-box;
 	padding-left: 60px;
