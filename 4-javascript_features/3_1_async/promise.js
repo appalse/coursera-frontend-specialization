@@ -1,6 +1,7 @@
-const visaProbability    = .5;
-const hotelProbability = .5;
+const visaProbability  = .9;
+const hotelProbability = .6;
 const ticketProbability  = .5;
+const exceptionProbability = .2;
 
 
 function applyForVisa(visa) {
@@ -8,7 +9,7 @@ function applyForVisa(visa) {
 	visa.reason = "BAD DOCUMENTS";
 	return new Promise(function(resolve, reject) {
 			setTimeout(function() {
-				Math.random() > visaProbability 
+				Math.random() < visaProbability 
 					? resolve(visa) 
 					: reject(visa);
 			}, 1000);
@@ -16,6 +17,7 @@ function applyForVisa(visa) {
 };
 
 function getVisa(visa) {
+	if (Math.random() < exceptionProbability) throw new Error("RANDOM EXCEPTION");
 	console.info("Visa is ready, visa number: " + visa.number);
 	return new Promise(function(resolve, reject) {
 		resolve(visa);
@@ -28,7 +30,7 @@ function bookHotel(visa) {
 	visa.reason = "NO ROOMS";
 	return new Promise(function(resolve, reject) {
 		setTimeout(function() {
-			Math.random() > hotelProbability 
+			Math.random() < hotelProbability 
 				? resolve(visa) 
 				: reject(visa);
 		}, 500);
@@ -49,7 +51,7 @@ function buyTicket(visa) {
 	visa.reason = "NO FLIGHT";
 	return new Promise(function(resolve, reject) {
 		setTimeout( function(){
-			Math.random() > ticketProbability
+			Math.random() < ticketProbability
 				? resolve(visa) 
 				: reject(visa);
 		}, 500);	
@@ -67,4 +69,6 @@ applyForVisa({number: 123, reason: "-"})
 	.then(getBooking)
 	.then(buyTicket)
 	.then(getTicket)
-	.catch(visa => console.error(visa.reason));
+	.catch(err => console.error(err.hasOwnProperty('reason') 
+								? err.reason
+								: err));
