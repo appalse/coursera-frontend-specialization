@@ -1,0 +1,90 @@
+:root {
+	--gradient-left-color: #22AB93;
+	--gradient-right-color: #19668D;
+	--background-color: #CFD0CF;
+	--text-color: #434344;
+}
+
+
+body {
+	margin: 0;
+	background: var(--background-color);
+	font-family: Arial, sans-serif;
+}
+
+.game {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.header {
+	text-align: center;
+	font: bold 42px/47px Arial;
+	margin: 40px auto;
+}
+
+.cards {
+	list-style-type: none;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(4, 150px);
+	perspective: 600px;
+}
+
+.card {
+	height: 130px;
+	width: 130px;
+	margin: 0 25px 25px 0;
+	border: 5px solid white;
+	border-radius: 9px;
+	box-sizing: border-box;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+	position: relative;
+	cursor: pointer;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+	background-color: white;
+}
+
+.card__face {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.card__face--front {
+	background: linear-gradient(45deg, 
+								var(--gradient-left-color),
+								var(--gradient-right-color));	
+}
+
+.card__face--back {
+	width: 75px; 
+	height: 75px;
+	margin: auto auto;
+	top: 0; left: 0; right: 0; bottom: 0;
+
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+
+
+#card1 .card__face--back { background-image: url('./img/css_sprites.png') -10px -10px;  }
+#card2 .card__face--back { background-image: url('./img/css_sprites.png') -105px -10px; }
+#card3 .card__face--back { background-image: url('./img/css_sprites.png') -10px -105px; }
+#card4 .card__face--back { background-image: url('./img/css_sprites.png') -105px -105px; }
+#card5 .card__face--back { background-image: url('./img/css_sprites.png') -200px -10px; }
+#card6 .card__face--back { background-image: url('./img/css_sprites.png') -200px -105px; }
+
+.card.opened {
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
