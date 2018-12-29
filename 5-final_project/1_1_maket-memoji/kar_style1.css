@@ -27,9 +27,11 @@ body {
 .cards {
 	list-style-type: none;
 	padding: 0;
+	display: -ms-grid;
 	display: grid;
 	grid-template-columns: repeat(4, 150px);
-	perspective: 600px;
+	-webkit-perspective: 600px;
+	        perspective: 600px;
 }
 
 .card {
@@ -38,11 +40,18 @@ body {
 	margin: 0 25px 25px 0;
 	border: 5px solid white;
 	border-radius: 9px;
-	box-sizing: border-box;
-	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+	        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 	position: relative;
 	cursor: pointer;
+	-webkit-transition: -webkit-transform 1s;
+	transition: -webkit-transform 1s;
+	-o-transition: transform 1s;
 	transition: transform 1s;
+	transition: transform 1s, -webkit-transform 1s;
+	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 	background-color: white;
 }
@@ -51,10 +60,17 @@ body {
 	height: 100%;
 	width: 100%;
 	position: absolute;
+	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 
 .card__face--front {
+	background: -webkit-linear-gradient(45deg, 
+								var(--gradient-left-color),
+								var(--gradient-right-color));
+	background: -o-linear-gradient(45deg, 
+								var(--gradient-left-color),
+								var(--gradient-right-color));	
 	background: linear-gradient(45deg, 
 								var(--gradient-left-color),
 								var(--gradient-right-color));	
@@ -66,10 +82,7 @@ body {
 	margin: auto auto;
 	top: 0; left: 0; right: 0; bottom: 0;
 
-	-moz-transform: rotateY(180deg);
-	-ms-transform: rotateY(180deg);
 	-webkit-transform: rotateY(180deg);
-	-o-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
 
@@ -83,9 +96,6 @@ body {
 #card6 .card__face--back, #card12 .card__face--back { background: url('./img/css_sprites.png') -200px -105px; }
 
 .card.opened {
-	-moz-transform: rotateY(180deg);
-	-ms-transform: rotateY(180deg);
 	-webkit-transform: rotateY(180deg);
-	-o-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
