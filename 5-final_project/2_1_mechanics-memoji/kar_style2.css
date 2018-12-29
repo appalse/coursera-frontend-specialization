@@ -31,72 +31,85 @@ body {
 	padding: 0;
 	display: grid;
 	grid-template-columns: repeat(4, 150px);
-	perspective: 600px;
+	-webkit-perspective: 600px;
+			perspective: 600px;
 }
 
 .card {
 	height: 130px;
 	width: 130px;
 	margin: 0 25px 25px 0;
-	box-sizing: border-box;
-	border-radius: 9px;
-	border: 5px solid white;
-	
-	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+	border-radius: 9px;	
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 	position: relative;
 	cursor: pointer;
-	transition: transform 0.5s;
-	transform-style: preserve-3d;
-	background-color: white;
+	/*background-color: white; ERROR ON MACOS IN CHROME*/
+
+	-webkit-transition: -webkit-transform 1s;
+			transition: -webkit-transform 1s;
+	-o-transition: transform 1s;
+	transition: transform 1s;
+	transition: transform 1s, -webkit-transform 1s;
+	-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+}
+
+.card__face--front {
+	border-radius: 9px;
+	border: 5px solid white;
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;		
+	background: -webkit-linear-gradient(45deg, 
+								var(--gradient-left-color),
+								var(--gradient-right-color));
+	background: -o-linear-gradient(45deg, 
+								var(--gradient-left-color),
+								var(--gradient-right-color));	
+	background: linear-gradient(45deg, 
+								var(--gradient-left-color),
+								var(--gradient-right-color));		
 }
 
 .card__face {
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	backface-visibility: hidden;
-}
-
-.card__face--front {	
-	background: linear-gradient(45deg, 
-								var(--gradient-left-color),
-								var(--gradient-right-color));	
+	-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
 }
 
 .card__face--back {
+	border-radius: 9px;
+	background: #fff;
+	-webkit-transform: rotateY(180deg);
+			transform: rotateY(180deg);			
+}
+
+.memoji {
 	width: 75px; 
 	height: 75px;
+	position: absolute;
 	margin: auto auto;
 	top: 0; left: 0; right: 0; bottom: 0;
-
-	-moz-transform: rotateY(180deg);
-	-ms-transform: rotateY(180deg);
-	-webkit-transform: rotateY(180deg);
-	-o-transform: rotateY(180deg);
-	transform: rotateY(180deg);
 }
 
-.emoji1 { background: url('./img/css_sprites.png') -10px -10px;   }
-.emoji2 { background: url('./img/css_sprites.png') -105px -10px;  }
-.emoji3 { background: url('./img/css_sprites.png') -10px -105px;  }
-.emoji4 { background: url('./img/css_sprites.png') -105px -105px; }
-.emoji5 { background: url('./img/css_sprites.png') -200px -10px;  }
-.emoji6 { background: url('./img/css_sprites.png') -200px -105px; }
+.emoji1 .memoji { background: url('./img/css_sprites.png') -10px -10px;   }
+.emoji2 .memoji { background: url('./img/css_sprites.png') -105px -10px;  }
+.emoji3 .memoji { background: url('./img/css_sprites.png') -10px -105px;  }
+.emoji4 .memoji { background: url('./img/css_sprites.png') -105px -105px; }
+.emoji5 .memoji { background: url('./img/css_sprites.png') -200px -10px;  }
+.emoji6 .memoji { background: url('./img/css_sprites.png') -200px -105px; }
 
 .card.opened {
-	-moz-transform: rotateY(180deg);
-	-ms-transform: rotateY(180deg);
 	-webkit-transform: rotateY(180deg);
-	-o-transform: rotateY(180deg);
-	transform: rotateY(180deg);
+			transform: rotateY(180deg);
 }
 
-.card.success {
+.card.success .card__face--back {
 	background: var(--succes-background-color);
-	border: none;
 }
 
-.card.failure {
+.card.failure .card__face--back {
 	background: var(--failure-background-color);
-	border: none;
 }

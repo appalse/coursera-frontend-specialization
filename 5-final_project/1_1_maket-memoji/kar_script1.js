@@ -1,17 +1,9 @@
 'use strict';
 
-(function () { 
+const cards = document.querySelectorAll('.card');
 
-	const opened = 'opened';
-	var cardElems = document.getElementsByClassName('card');
-	for (var i = 0; i < cardElems.length; i++) {
-		cardElems[i].addEventListener('click', function(event) {
-			if (event.target.tagName == 'DIV') {
-				event.target.parentNode.classList.toggle(opened);
-			}
-		});
-	}
+function flipCard() {
+  this.classList.toggle('opened');
+}
 
-	
-
-}());
+cards.forEach(card => card.addEventListener('click', flipCard));

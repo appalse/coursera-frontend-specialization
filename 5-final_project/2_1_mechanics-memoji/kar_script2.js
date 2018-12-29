@@ -45,8 +45,8 @@ const success = 'success';
 const failure = 'failure';
 
 function Card(cardFace) {
-	this.currentCard = cardFace.parentNode;
 
+	this.currentCard = cardFace.parentNode;
 
 
 	this.__getOpenedCards = function() {
@@ -112,6 +112,7 @@ Card.prototype.processClick = function() {
 			throw 'too many opened cards';
 	}
 	this.currentCard.classList.toggle(opened);
+	
 };
 
 /* ----------------------------------------------------------------------- */

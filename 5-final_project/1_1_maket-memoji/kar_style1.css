@@ -27,11 +27,10 @@ body {
 .cards {
 	list-style-type: none;
 	padding: 0;
-	display: -ms-grid;
 	display: grid;
 	grid-template-columns: repeat(4, 150px);
 	-webkit-perspective: 600px;
-	        perspective: 600px;
+			perspective: 600px;
 }
 
 .card {
@@ -41,24 +40,21 @@ body {
 	border: 5px solid white;
 	border-radius: 9px;
 	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+			box-sizing: border-box;
 	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-	        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 	position: relative;
 	cursor: pointer;
-	background-color: white;
+	/*background-color: white; ERROR ON MACOS IN CHROME*/
 
 	-webkit-transition: -webkit-transform 1s;
-	transition: -webkit-transform 1s;
+			transition: -webkit-transform 1s;
 	-o-transition: transform 1s;
 	transition: transform 1s;
 	transition: transform 1s, -webkit-transform 1s;
 	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+			transform-style: preserve-3d;
 	
-
-    -webkit-transform: scale(1);
-    transform: scale(1);
 }
 
 .card__face {
@@ -66,13 +62,8 @@ body {
 	width: 100%;
 	position: absolute;
 	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	-webkit-transform: scale(1);
-	-webkit-transform: translate3D(0, 0, 0); 
-	-webkit-transform-style: preserve-3d;
-}
+			backface-visibility: hidden;
 
-.card__face--front {
 	background: -webkit-linear-gradient(45deg, 
 								var(--gradient-left-color),
 								var(--gradient-right-color));
@@ -84,31 +75,28 @@ body {
 								var(--gradient-right-color));	
 }
 
-.card__face--back {
+.memoji {
 	width: 75px; 
 	height: 75px;
+	position: absolute;
 	margin: auto auto;
 	top: 0; left: 0; right: 0; bottom: 0;
+}
 
+.card__face--back {
+	background: #fff;
 	-webkit-transform: rotateY(180deg);
-	transform: rotateY(180deg);
+			transform: rotateY(180deg);
 }
 
-.card__face--front, .card__face--back { 
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-
-
-#card1 .card__face--back, #card7  .card__face--back { background: url('./css_sprites.png') -10px -10px;   }
-#card2 .card__face--back, #card8  .card__face--back { background: url('./css_sprites.png') -105px -10px;  }
-#card3 .card__face--back, #card9  .card__face--back { background: url('./css_sprites.png') -10px -105px;  }
-#card4 .card__face--back, #card10 .card__face--back { background: url('./css_sprites.png') -105px -105px; }
-#card5 .card__face--back, #card11 .card__face--back { background: url('./css_sprites.png') -200px -10px;  }
-#card6 .card__face--back, #card12 .card__face--back { background: url('./css_sprites.png') -200px -105px; }
+#card1 .card__face--back .memoji, #card7  .card__face--back .memoji { background: url('./img/css_sprites.png') -10px -10px;   }
+#card2 .card__face--back .memoji, #card8  .card__face--back .memoji { background: url('./img/css_sprites.png') -105px -10px;  }
+#card3 .card__face--back .memoji, #card9  .card__face--back .memoji { background: url('./img/css_sprites.png') -10px -105px;  }
+#card4 .card__face--back .memoji, #card10 .card__face--back .memoji { background: url('./img/css_sprites.png') -105px -105px; }
+#card5 .card__face--back .memoji, #card11 .card__face--back .memoji { background: url('./img/css_sprites.png') -200px -10px;  }
+#card6 .card__face--back .memoji, #card12 .card__face--back .memoji { background: url('./img/css_sprites.png') -200px -105px; }
 
 .card.opened {
 	-webkit-transform: rotateY(180deg);
-	transform: rotateY(180deg);
+			transform: rotateY(180deg);
 }
