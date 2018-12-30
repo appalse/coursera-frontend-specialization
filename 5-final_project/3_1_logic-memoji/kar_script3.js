@@ -113,8 +113,7 @@ class Game {
 		let letters = Array.from(document.getElementsByClassName('message__letter'));
 		letters.forEach(function(letter, i, array) {
 			let animationDelay = i;
-			let animationDuration = array.length;
-			letter.style.animation = 'change-letter-size ' + animationDuration + 's ease-in ' + animationDelay + 's infinite normal';
+			letter.style.animation = 'change-letter-size .5s ease-out .' + animationDelay + 's infinite normal';
 		});
 
 		// Fill button text
